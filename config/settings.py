@@ -27,6 +27,8 @@ SHARED_APPS = (
     'hoa',
     'members',
     'staff',
+    'amenities',
+    'contractors',
     'settings'
 )
 
@@ -41,8 +43,10 @@ TENANT_APPS = (
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'amenities',
     'members',
     'staff',
+    'contractors',
     'settings'
 )
 
@@ -97,7 +101,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ['http://rainbow.localhost:8080']
+CORS_ALLOWED_ORIGINS = ['http://localhost:8080']
 
 ROOT_URLCONF = 'config.urls'
 

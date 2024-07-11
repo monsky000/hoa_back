@@ -14,11 +14,10 @@ class MemReg (models.Model):
   mobile = models.CharField(max_length=50, blank=True, null=True)
   email = models.EmailField(max_length=50, blank=True, null=True)
   fb_name = models.CharField(max_length=50, blank=True, null=True)
-  formFile = models.FileField(upload_to='member_img/', blank=True, null=True)
   description = models.TextField(blank=True, null=True)
-  REG_STATUS = [("For Approval", "FOR_APPROVAL" ),("Active", "ACTIVE" ),("Suspension", "SUSPENDED" ),("Disable", "DISABLED" )]
-  EDUC_CHOICE = [("Post_Grad", "POSTGRAD" ),("College", "COLLEGE" ),("High_School", "HIGH_SCHOOL" ),("Elementary", "ELEMENTARY" )]
-  reg_status = models.CharField(max_length=50, choices = REG_STATUS, default="FOR_APPROVAL")
+  REG_STATUS = [("For Approval", "For Approval" ),("Active", "Active" ),("Suspension", "Suspension" ),("Disable", "Disable" )]
+  EDUC_CHOICE = [("Post Graduate", "Post Graduate" ),("College", "College" ),("High School", "High School" ),("Elementary", "Elementary" )]
+  reg_status = models.CharField(max_length=50, choices = REG_STATUS, default="For Approval")
   educ = models.CharField(max_length=50, choices = EDUC_CHOICE)
   profession = models.CharField(max_length=100, blank=True, null=True)
   is_deleted = models.BooleanField(default=False)
@@ -31,6 +30,6 @@ class Occupants(models.Model):
   surname = models.CharField(max_length=255)
   age = models.IntegerField()
   relationship = models.CharField(max_length=100)
-  GENDER_CHOICE = [('M', 'MALE'),('F', 'FEMALE'),]
+  GENDER_CHOICE = [('Male', 'Male'),('Female', 'Female'),]
   gender = models.CharField(max_length=50, choices = GENDER_CHOICE)
   
