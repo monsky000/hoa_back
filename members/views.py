@@ -8,17 +8,14 @@ from rest_framework.permissions import IsAuthenticated
 class MemberRegistrationView(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request):
-        members = MemReg.objects.filter(is_deleted=False).order_by('-id')
-        serializer = MembersSerializer(members, many=True)
+        registration_forms = MemReg.objects.all()
+        serializer = MembersSerializer(registration_forms, many=True)
         return Response(serializer.data)
-    
-    def post(self, request, *args, **kwargs):
-        serializer = AddMemberSerializer(data=request.data)
+
+    def post(self, request):
+        serializer = MembersSerializer(data=request.data)
         if serializer.is_valid():
-            try:
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            except ValueError as e:
-                return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

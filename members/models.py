@@ -24,12 +24,12 @@ class MemReg (models.Model):
   create_date = models.DateTimeField(auto_now = True)
   
 class Occupants(models.Model):
-  id = models.AutoField(primary_key=True)
-  member = models.ForeignKey(MemReg, on_delete=models.CASCADE)
-  givenname = models.CharField(max_length=255)
-  surname = models.CharField(max_length=255)
-  age = models.IntegerField()
-  relationship = models.CharField(max_length=100)
-  GENDER_CHOICE = [('Male', 'Male'),('Female', 'Female'),]
-  gender = models.CharField(max_length=50, choices = GENDER_CHOICE)
+  id=models.AutoField(primary_key=True)
+  member=models.ForeignKey(MemReg, on_delete=models.CASCADE, db_column="member_id")
+  fullname=models.CharField(max_length=255)
+  dob=models.CharField()
+  relationship=models.CharField(max_length=100)
+  GENDER_CHOICE=[('Male', 'Male'),('Female', 'Female'),]
+  gender=models.CharField(max_length=50, choices = GENDER_CHOICE)
+  create_date = models.DateTimeField(auto_now = True)
   
