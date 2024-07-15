@@ -30,6 +30,7 @@ SHARED_APPS = (
     'amenities',
     'contractors',
     'settings',
+    'board'
 )
 
 TENANT_APPS = (
@@ -48,6 +49,7 @@ TENANT_APPS = (
     'staff',
     'contractors',
     'settings',
+    'board'
 )
 
 SITE_ID = 1
@@ -130,7 +132,7 @@ DATABASES = {
         'ENGINE': 'django_tenants.postgresql_backend',
         'NAME': os.environ.get('DATABASE_DB', 'hoa'),
         'USER': os.environ.get('DATABASE_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'postgres'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'RegDrei022021!'),
         'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
         'PORT': os.environ.get('DATABASE_PORT', 5432),
     }

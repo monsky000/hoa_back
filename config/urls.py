@@ -8,4 +8,5 @@ urlpatterns = [
     path('api/', include('staff.urls')),
     path('api/', include('settings.urls')),
     path('api/', include('contractors.urls')),
+    path('api/', include('board.urls'))
 ]

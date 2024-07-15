@@ -3,20 +3,20 @@ from .models import *
 
 class PositionsSerializers(serializers.ModelSerializer):
   class Meta:
-    models=Positions
+    model=Positions
     fields='__all__'
     
 class ElectionsSerializers(serializers.ModelSerializer):
   class Meta:
-    models=Elections
+    model=Elections
     fields='__all__'
     
 class NominationsSerializers(serializers.ModelSerializer):
   class Meta:
-    models=Nominations
+    model=Nominations
     fields='__all__'
 
 class VotesSerializers(serializers.ModelSerializer):
   class Meta:
-    models=Votes
+    model=Votes
     fields='__all__'
