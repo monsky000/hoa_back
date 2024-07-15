@@ -22,7 +22,7 @@ class ContractorsView(APIView):
     
     def put(self, request, pk):
         try:
-            contactor = Contractors.objects.get(pk=pk, deleted=False)
+            contactor = Contractors.objects.get(pk=pk, is_deleted=False)
         except Contractors.DoesNotExist:
             return Response({'error': 'Contactor not found'}, status=status.HTTP_404_NOT_FOUND)
         

@@ -29,7 +29,7 @@ SHARED_APPS = (
     'staff',
     'amenities',
     'contractors',
-    'settings'
+    'settings',
 )
 
 TENANT_APPS = (
@@ -47,7 +47,7 @@ TENANT_APPS = (
     'members',
     'staff',
     'contractors',
-    'settings'
+    'settings',
 )
 
 SITE_ID = 1

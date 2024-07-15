@@ -3,5 +3,5 @@ from .models import Contractors
 
 class ContractorsSerializers(serializers.ModelSerializer):
   class Meta:
-    model = Contractors
-    fields = '__all__'
+    model=Contractors
+    fields='__all__'
